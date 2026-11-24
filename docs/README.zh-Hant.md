@@ -6,7 +6,8 @@
 
 **星馳 AI 每日簽到 · 多帳號 · GET/POST 狀態回讀 · JSONL**
 
-[简体中文](../README.md) · [English](README.en.md) · [繁體中文](README.zh-Hant.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md)
+[简体中文](../README.md) · [English](README.en.md) · **繁體中文** · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md)
+> 版本：**v1.0.0**（2026-11-24）
 
 </div>
 
@@ -42,4 +43,3 @@ python xingchi_daily.py --only 1,3-4
 ## 隱私
 
 不要提交 JWT、帳號檔案、報告、日誌或含憑證的截圖。腳本會遮蔽手機號、Token 與推送憑證。
-

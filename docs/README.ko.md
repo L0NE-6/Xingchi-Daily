@@ -6,7 +6,8 @@
 
 **Xingchi AI 일일 체크인 · 다중 계정 · GET/POST 상태 재조회 · JSONL**
 
-[简体中文](../README.md) · [English](README.en.md) · [繁體中文](README.zh-Hant.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md)
+[简体中文](../README.md) · [English](README.en.md) · [繁體中文](README.zh-Hant.md) · [日本語](README.ja.md) · **한국어** · [Português (BR)](README.pt-BR.md)
+> 버전: **v1.0.0** (2026-11-24)
 
 </div>
 
@@ -42,4 +43,3 @@ python xingchi_daily.py --only 1,3-4
 ## 개인정보
 
 JWT, 계정 파일, 보고서, 로그, 자격 증명이 포함된 스크린샷을 커밋하지 마세요. 출력에서는 전화번호, Token, 알림 비밀값을 가립니다.
-

@@ -6,7 +6,8 @@
 
 **Check-in diário do Xingchi AI · múltiplas contas · leitura de estado GET/POST · JSONL**
 
-[简体中文](../README.md) · [English](README.en.md) · [繁體中文](README.zh-Hant.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md)
+[简体中文](../README.md) · [English](README.en.md) · [繁體中文](README.zh-Hant.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · **Português (BR)**
+> Versão: **v1.0.0** (2026-11-24)
 
 </div>
 
@@ -49,4 +50,3 @@ python xingchi_daily.py --only 1,3-4
 
 Não faça commit de JWT, arquivos de conta, relatórios, logs ou capturas com
 credenciais. O script oculta telefone, Token e segredos de notificação.
-

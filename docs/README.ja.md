@@ -6,7 +6,8 @@
 
 **Xingchi AI 毎日チェックイン · 複数アカウント · GET/POST 状態の再読取 · JSONL**
 
-[简体中文](../README.md) · [English](README.en.md) · [繁體中文](README.zh-Hant.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md)
+[简体中文](../README.md) · [English](README.en.md) · [繁體中文](README.zh-Hant.md) · **日本語** · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md)
+> バージョン：**v1.0.0**（2026-11-24）
 
 </div>
 
@@ -42,4 +43,3 @@ python xingchi_daily.py --only 1,3-4
 ## プライバシー
 
 JWT、アカウントファイル、レポート、ログ、認証情報を含む画像をコミットしないでください。出力では電話番号、Token、通知用の秘密情報を伏せます。
-

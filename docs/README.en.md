@@ -3,10 +3,11 @@
 <sub><strong>L0NE-6 · DAILY SIGNAL</strong></sub>
 
 # 🌟 Xingchi Daily
+[简体中文](../README.md) · **English** · [繁體中文](README.zh-Hant.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md)
+> Version: **v1.0.0** (2026-11-24)
 
 **Xingchi AI daily check-in · multi-account · GET/POST status readback · JSONL**
 
-[简体中文](../README.md) · [English](README.en.md) · [繁體中文](README.zh-Hant.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Português (BR)](README.pt-BR.md)
 
 </div>
 
@@ -82,4 +83,3 @@ All tests use fake HTTP sessions and do not call the live service.
 
 MIT. See `LICENSE`, `NOTICE.md`, and `THIRD_PARTY_NOTICES.md`. Donation QR codes
 are only for voluntary support of the author.
-
