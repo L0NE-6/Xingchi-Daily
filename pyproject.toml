@@ -1,0 +1,17 @@
+[project]
+name = "xingchi-daily"
+version = "1.0.0"
+description = "Xingchi daily check-in runner with strict status readback"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "requests>=2.31,<3",
+]
+
+[tool.ruff]
+target-version = "py39"
+extend-exclude = ["__pycache__"]
+
+[tool.ruff.lint]
+select = ["E9", "F63", "F7", "F82"]
+

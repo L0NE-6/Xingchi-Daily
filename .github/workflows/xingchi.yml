@@ -1,0 +1,71 @@
+name: Xingchi Daily
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 23 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt ruff pytest
+      - name: Offline tests
+        run: python -m pytest -q
+      - name: Compile
+        run: python -m compileall -q .
+      - name: Ruff
+        run: python -m ruff check .
+
+  daily:
+    needs: test
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    env:
+      XINGCHI_TOKENS: ${{ secrets.XINGCHI_TOKENS }}
+      XINGCHI_TOKEN: ${{ secrets.XINGCHI_TOKEN }}
+      PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+      BARK_URL: ${{ secrets.BARK_URL }}
+      WECOM_WEBHOOK: ${{ secrets.WECOM_WEBHOOK }}
+      DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
+      GENERIC_WEBHOOK_URL: ${{ secrets.GENERIC_WEBHOOK_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Credential preflight
+        id: credentials
+        shell: bash
+        run: |
+          if [ -z "${XINGCHI_TOKENS}" ] && [ -z "${XINGCHI_TOKEN}" ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=Xingchi Daily::No Xingchi secret configured; skipping live run."
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Run check-in
+        if: steps.credentials.outputs.configured == 'true'
+        shell: bash
+        run: |
+          set -o pipefail
+          python xingchi_daily.py --no-notify | tee xingchi-report.jsonl
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xingchi-report
+          path: xingchi-report.jsonl
+          if-no-files-found: ignore
